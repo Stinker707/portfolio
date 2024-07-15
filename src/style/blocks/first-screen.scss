@@ -8,6 +8,7 @@
     background-image: url(img/background-fist-screen-2.jpg); 
     background-size: cover;
     background-position: center;
+    color: #fff;
 
     &__title {
         margin-bottom: 25px;
@@ -38,15 +39,10 @@
         height: 48px;
         fill: currentColor;
         position: absolute;
-        bottom: 0;
+        bottom: 20px;
         left: 50%;
         transform: translate(-50%, 0);
         animation: bounce 3s infinite;
-
-        @media (max-width: 425px) {
-            // width: 24px;
-            // height: 24px;
-        }
     }
 }
 

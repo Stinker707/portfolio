@@ -22,8 +22,8 @@
     <section class="portfolio">
         <div class="container">
             <h2 class="portfolio__title">Портфолио</h2>
-            <div class="portfolio__cards">
-                <article class="portfolio-card">
+            <div class="portfolio__cards portfolio-cards">
+                <article class="portfolio-card portfolio-cards__elem">
                     <div class="portfolio-card-picture">
                         <img class="portfolio-card-picture__img" src="img/landing-1.jpg" alt="job-1">
                     </div>
@@ -33,7 +33,7 @@
                     <div class="portfolio-card__description">Верстрка многостраничного сайта</div>
                 </article>
 
-                <article class="portfolio-card">
+                <article class="portfolio-card portfolio-cards__elem">
                     <div class="portfolio-card-picture">
                         <img class="portfolio-card-picture__img" src="img/landing-2.jpg" alt="job-2">
                     </div>
@@ -43,17 +43,17 @@
                     <div class="portfolio-card__description">Верстрка многостраничного сайта</div>
                 </article>
 
-                <article class="portfolio-card">
+                <article class="portfolio-card portfolio-cards__elem">
                     <div class="portfolio-card-picture">
                         <img class="portfolio-card-picture__img" src="img/landing-3.webp" alt="job-3">
                     </div>
                     <h3 class="portfolio-card__title">
                         Многостраничный сайт
                     </h3>
-                    <div class="portfolio-card__description">Верстрка многостраничного сайта</div>
+                    <div class="portfolio-card__description">Верстрка многостраничного сайта с применением современных инструментов веб-разработки</div>
                 </article>
 
-                <article class="portfolio-card">
+                <article class="portfolio-card portfolio-cards__elem">
                     <div class="portfolio-card-picture">
                         <img class="portfolio-card-picture__img" src="img/landing-4.webp" alt="job-4">
                     </div>
@@ -70,7 +70,39 @@
 </main>
 
 <footer class="footer">
-    <div class="container">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores eveniet repudiandae molestiae. Alias, consequuntur facilis suscipit earum consequatur aut placeat! Nesciunt, placeat illum? Cumque, eos sequi. Excepturi fuga odit beatae.</div>
+    <div class="footer__container container">
+        <div class="copyright">
+            <div class="copyright__title">
+                © Олег Игнатьев
+            </div>
+            <div class="copyright__info">
+                Html-верстальщик
+            </div>
+        </div>
+
+        <div class="social-links">
+            <div class="social-links__title">
+                Мои профили в социальных сетях:
+            </div>
+
+            <div class="social-links__list">
+                <a class="social-link" href="#"><img class="social-link__img" src="img/social/dribbble.svg" alt="dribbble"></a>
+                <a class="social-link" href="#"><img class="social-link__img" src="img/social/youtube.svg" alt="dribbble"></a>
+                <a class="social-link" href="#"><img class="social-link__img" src="img/social/instagram.svg" alt="dribbble"></a>
+                <a class="social-link" href="#"><img class="social-link__img" src="img/social/twitter.svg" alt="dribbble"></a>
+            </div>
+        </div>
+
+        <div class="feedback">
+            <button class="button">
+                Связаться со мной
+            </button>
+
+            <div class="feedback__description">
+                Напиши мне, чтобы заказать или узнать стоимость верстки вашего проекта
+            </div>
+        </div>
+    </div>
 </footer>
 
 

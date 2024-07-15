@@ -1,4 +1,14 @@
 .footer {
     margin-top: 115px;
-    background-color: #000;
+    background-color: #374562;
+    color: #fff;
+
+
+    &__container {
+        --container-vertical-padding: 40px;
+        min-height: 290px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+    }
 }

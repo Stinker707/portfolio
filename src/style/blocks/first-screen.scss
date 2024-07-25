@@ -2,35 +2,34 @@
     height: 100vh;
     position: relative;
     display: flex;
+    gap: 25px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-image: url(img/background-fist-screen-2.jpg); 
     background-size: cover;
     background-position: center;
-    color: #fff;
+    color: $dark-theme-clr-text-1;
 
     &__title {
-        margin-bottom: 25px;
         font-weight: 700;
-        font-size: 56px;
-        line-height: 1.3;
+        font-size: var(--first-screen-title-font-size, 56px);
         text-align: center;
 
-        @media (max-width: 425px) {
-            font-size: 36px;
+        @media (max-width: $s) {
+            --first-screen-title-font-size: 36px;
         }
     }
 
     &__subtitle {
         font-weight: 700;
-        font-size: 16px;
+        font-size: var(--first-screen-subtitle-font-size, 16px);
         line-height: 1.5;
         letter-spacing: 0.2em;
         text-transform: uppercase;
 
-        @media (max-width: 425px) {
-            font-size: 20px;
+        @media (max-width: $s) {
+            --first-screen-subtitle-font-size: 20px;
         }
     }
 

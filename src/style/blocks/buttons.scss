@@ -1,0 +1,14 @@
+.button {
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: 3px solid currentColor;
+    font-weight: 700;
+    font-size: var(--button-font-size, 16px);
+    text-transform: uppercase;
+    background-color: $dark-theme-clr;
+    color: $dark-theme-clr-text-1;
+
+    @media (max-width: $l) {
+        --button-font-size: 13px;
+    }
+}

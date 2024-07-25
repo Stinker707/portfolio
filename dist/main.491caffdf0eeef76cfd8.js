@@ -9119,8 +9119,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! fonts/Montserrat-Regular.woff2 */ "./src/fonts/Montserrat-Regular.woff2"), __webpack_require__.b);
 var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! fonts/Montserrat-SemiBold.woff2 */ "./src/fonts/Montserrat-SemiBold.woff2"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(/*! fonts/Montserrat-ExtraBold.woff2 */ "./src/fonts/Montserrat-ExtraBold.woff2"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_3___ = new URL(/* asset import */ __webpack_require__(/*! img/background-fist-screen.jpg */ "./src/img/background-fist-screen.jpg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(/*! fonts/Montserrat-Bold.woff2 */ "./src/fonts/Montserrat-Bold.woff2"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_3___ = new URL(/* asset import */ __webpack_require__(/*! img/background-fist-screen-2.jpg */ "./src/img/background-fist-screen-2.jpg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
@@ -9142,7 +9142,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@font-face {
 @font-face {
   font-family: "Montserrat";
   src: url(${___CSS_LOADER_URL_REPLACEMENT_2___}) format("woff2");
-  font-weight: 800;
+  font-weight: 700;
   font-style: normal;
 }
 * {
@@ -9154,13 +9154,16 @@ a {
   text-decoration: none;
 }
 
+button {
+  font-family: inherit;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
 body {
   font-family: "Montserrat", sans-serif;
-  color: #ceccd4;
 }
 
 .first-screen {
@@ -9173,8 +9176,8 @@ body {
   background-image: url(${___CSS_LOADER_URL_REPLACEMENT_3___});
   background-size: cover;
   background-position: center;
+  color: #fff;
 }
-
 .first-screen__title {
   margin-bottom: 25px;
   font-weight: 700;
@@ -9182,7 +9185,11 @@ body {
   line-height: 1.3;
   text-align: center;
 }
-
+@media (max-width: 425px) {
+  .first-screen__title {
+    font-size: 36px;
+  }
+}
 .first-screen__subtitle {
   font-weight: 700;
   font-size: 16px;
@@ -9190,13 +9197,17 @@ body {
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
-
+@media (max-width: 425px) {
+  .first-screen__subtitle {
+    font-size: 20px;
+  }
+}
 .first-screen__arrow {
   width: 48px;
   height: 48px;
   fill: currentColor;
   position: absolute;
-  bottom: 0;
+  bottom: 20px;
   left: 50%;
   transform: translate(-50%, 0);
   animation: bounce 3s infinite;
@@ -9217,67 +9228,231 @@ body {
   }
 }
 .portfolio {
-  width: 1110px;
-  margin: 80px auto 115px;
+  margin-top: 80px;
 }
-
-.portfolio-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-rows: 540px;
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
+@media (max-width: 768px) {
+  .portfolio__cards {
+    margin: 0 auto;
+    max-width: 400px;
+  }
 }
-
-.portfolio-card-picture {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.portfolio-card-picture__img {
-  width: 100%;
-  height: 100%;
-}
-
-.portfilio-title {
-  text-align: center;
+.portfolio__title {
+  padding-bottom: 70px;
   font-weight: 700;
   font-size: 46px;
   line-height: 1.3;
   text-align: center;
   color: #000;
 }
+@media (max-width: 425px) {
+  .portfolio__title {
+    font-size: 24px;
+  }
+}
+
+.footer {
+  margin-top: 115px;
+  background-color: #374562;
+  color: #fff;
+}
+.footer__container {
+  --container-vertical-padding: 40px;
+  min-height: 290px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+@media (max-width: 768px) {
+  .footer__container {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    grid-gap: 30px;
+  }
+}
+
+.container {
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: var(--container-vertical-padding) 20px;
+}
+
+.portfolio-card-picture {
+  aspect-ratio: 16/9;
+}
+.portfolio-card-picture__img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
 
 .portfolio-card {
-  background-color: #fff;
-  width: 540px;
-  height: 500px;
   padding: 20px;
+  box-shadow: 0px 10px 40px rgba(193, 225, 240, 0.35);
 }
-
-.portfolio-card p {
+.portfolio-card__description {
   font-size: 16px;
   line-height: 1.3;
-  color: #000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #232324;
 }
-
-.portfolio-card-img {
-  max-width: 500px;
+@media (max-width: 768px) {
+  .portfolio-card__description {
+    text-align: center;
+  }
 }
-
-.porfolio-card__title {
+@media (max-width: 425px) {
+  .portfolio-card__description {
+    font-size: 14px;
+  }
+}
+.portfolio-card__title {
+  margin-top: 20px;
   margin-bottom: 13px;
   font-weight: 600;
   font-size: 24px;
   line-height: 1.3;
-  color: #000;
+  color: #232324;
+}
+@media (max-width: 768px) {
+  .portfolio-card__title {
+    text-align: center;
+  }
+}
+@media (max-width: 425px) {
+  .portfolio-card__title {
+    font-size: 20px;
+  }
 }
 
-.footer {
-  margin: 0 auto;
-  max-width: 1110px;
-  height: 250px;
-  background-color: aqua;
-}`, "",{"version":3,"sources":["webpack://./src/style/fonts.scss","webpack://./src/index.scss","webpack://./src/style/reset.scss","webpack://./src/style/normalize.scss","webpack://./src/style/var.scss","webpack://./src/style/blocks/first-screen.scss","webpack://./src/style/blocks/section-portfolio.scss","webpack://./src/style/blocks/footer.scss"],"names":[],"mappings":"AAAA;EACI,yBAAA;EACA,4DAAA;EACA,gBAAA;EACA,kBAAA;ACCJ;ADEA;EACI,yBAAA;EACA,4DAAA;EACA,gBAAA;EACA,kBAAA;ACAJ;ADGA;EACI,yBAAA;EACA,4DAAA;EACA,gBAAA;EACA,kBAAA;ACDJ;ACjBA;EACI,SAAA;ADmBJ;;AChBA;EACI,6BAAA;EAAA,qBAAA;ADmBJ;;AExBA;EACI,sBAAA;AF2BJ;;AExBA;EACI,qCAAA;EACA,cCNO;AHiCX;;AIjCA;EACI,aAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,uBAAA;EACA,yDAAA;EACA,sBAAA;EACA,2BAAA;AJoCJ;;AIjCA;EACI,mBAAA;EACA,gBAAA;EACA,eAAA;EACA,gBAAA;EACA,kBAAA;AJoCJ;;AIjCA;EACI,gBAAA;EACA,eAAA;EACA,gBAAA;EACA,qBAAA;EACA,yBAAA;AJoCJ;;AIjCA;EACI,WAAA;EACA,YAAA;EACA,kBAAA;EACA,kBAAA;EACA,SAAA;EACA,SAAA;EACA,6BAAA;EACA,6BAAA;AJoCJ;;AIjCA;EACI;IACI,6BAAA;IACA,6BAAA;EJoCN;EIjCE;IACI,iCAAA;IACA,iCAAA;EJmCN;EIhCE;IACI,iCAAA;IACA,iCAAA;EJkCN;AACF;AKvFA;EACI,aAAA;EAEA,uBAAA;ALwFJ;;AKlFA;EACI,aAAA;EACA,8BAAA;EACA,qBAAA;EACA,qBAAA;EACA,kBAAA;ALqFJ;;AKlFA;EACI,oBAAA;KAAA,iBAAA;ALqFJ;AKnFI;EACI,WAAA;EACA,YAAA;ALqFR;;AKjFA;EACI,kBAAA;EACA,gBAAA;EACA,eAAA;EACA,gBAAA;EACA,kBAAA;EACA,WAAA;ALoFJ;;AKjFA;EACI,sBAAA;EACA,YAAA;EACA,aAAA;EACA,aAAA;ALoFJ;;AKjFA;EACI,eAAA;EACA,gBAAA;EACA,WAAA;ALoFJ;;AKjFA;EACI,gBAAA;ALoFJ;;AKjFA;EACI,mBAAA;EACA,gBAAA;EACA,eAAA;EACA,gBAAA;EACA,WAAA;ALoFJ;;AM7IA;EACI,cAAA;EACA,iBAAA;EACA,aAAA;EACA,sBAAA;ANgJJ","sourcesContent":["@font-face {\r\n    font-family: 'Montserrat';\r\n    src: url('fonts/Montserrat-Regular.woff2') format('woff2');\r\n    font-weight: 400;\r\n    font-style: normal;\r\n}\r\n\r\n@font-face {\r\n    font-family: 'Montserrat';\r\n    src: url('fonts/Montserrat-SemiBold.woff2') format('woff2');\r\n    font-weight: 600;\r\n    font-style: normal;\r\n}\r\n\r\n@font-face {\r\n    font-family: 'Montserrat';\r\n    src: url('fonts/Montserrat-ExtraBold.woff2') format('woff2');\r\n    font-weight: 800;\r\n    font-style: normal;\r\n}","@font-face {\n  font-family: \"Montserrat\";\n  src: url(\"fonts/Montserrat-Regular.woff2\") format(\"woff2\");\n  font-weight: 400;\n  font-style: normal;\n}\n@font-face {\n  font-family: \"Montserrat\";\n  src: url(\"fonts/Montserrat-SemiBold.woff2\") format(\"woff2\");\n  font-weight: 600;\n  font-style: normal;\n}\n@font-face {\n  font-family: \"Montserrat\";\n  src: url(\"fonts/Montserrat-ExtraBold.woff2\") format(\"woff2\");\n  font-weight: 800;\n  font-style: normal;\n}\n* {\n  margin: 0;\n}\n\na {\n  text-decoration: none;\n}\n\n*, *::before, *::after {\n  box-sizing: border-box;\n}\n\nbody {\n  font-family: \"Montserrat\", sans-serif;\n  color: #ceccd4;\n}\n\n.first-screen {\n  height: 100vh;\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  background-image: url(img/background-fist-screen.jpg);\n  background-size: cover;\n  background-position: center;\n}\n\n.first-screen__title {\n  margin-bottom: 25px;\n  font-weight: 700;\n  font-size: 56px;\n  line-height: 1.3;\n  text-align: center;\n}\n\n.first-screen__subtitle {\n  font-weight: 700;\n  font-size: 16px;\n  line-height: 1.5;\n  letter-spacing: 0.2em;\n  text-transform: uppercase;\n}\n\n.first-screen__arrow {\n  width: 48px;\n  height: 48px;\n  fill: currentColor;\n  position: absolute;\n  bottom: 0;\n  left: 50%;\n  transform: translate(-50%, 0);\n  animation: bounce 3s infinite;\n}\n\n@keyframes bounce {\n  0%, 5%, 15%, 25% {\n    transform: translate(-50%, 0);\n    transform: translate(-50%, 0);\n  }\n  10% {\n    transform: translate(-50%, -20px);\n    transform: translate(-50%, -20px);\n  }\n  20% {\n    transform: translate(-50%, -10px);\n    transform: translate(-50%, -10px);\n  }\n}\n.portfolio {\n  width: 1110px;\n  margin: 80px auto 115px;\n}\n\n.portfolio-container {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-auto-rows: 540px;\n  grid-column-gap: 20px;\n  grid-row-gap: 20px;\n}\n\n.portfolio-card-picture {\n  object-fit: cover;\n}\n.portfolio-card-picture__img {\n  width: 100%;\n  height: 100%;\n}\n\n.portfilio-title {\n  text-align: center;\n  font-weight: 700;\n  font-size: 46px;\n  line-height: 1.3;\n  text-align: center;\n  color: #000;\n}\n\n.portfolio-card {\n  background-color: #fff;\n  width: 540px;\n  height: 500px;\n  padding: 20px;\n}\n\n.portfolio-card p {\n  font-size: 16px;\n  line-height: 1.3;\n  color: #000;\n}\n\n.portfolio-card-img {\n  max-width: 500px;\n}\n\n.porfolio-card__title {\n  margin-bottom: 13px;\n  font-weight: 600;\n  font-size: 24px;\n  line-height: 1.3;\n  color: #000;\n}\n\n.footer {\n  margin: 0 auto;\n  max-width: 1110px;\n  height: 250px;\n  background-color: aqua;\n}","* {\r\n    margin: 0;\r\n}\r\n\r\na {\r\n    text-decoration: none;\r\n}","*, *::before, *::after  {\r\n    box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n    font-family: \"Montserrat\", sans-serif;\r\n    color: $base-clr;\r\n}","$base-clr: #ceccd4;",".first-screen {\r\n    height: 100vh;\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: center;\r\n    background-image: url(img/background-fist-screen.jpg); \r\n    background-size: cover;\r\n    background-position: center;\r\n}\r\n\r\n.first-screen__title {\r\n    margin-bottom: 25px;\r\n    font-weight: 700;\r\n    font-size: 56px;\r\n    line-height: 1.3;\r\n    text-align: center;\r\n}\r\n\r\n.first-screen__subtitle {\r\n    font-weight: 700;\r\n    font-size: 16px;\r\n    line-height: 1.5;\r\n    letter-spacing: 0.2em;\r\n    text-transform: uppercase;\r\n}\r\n\r\n.first-screen__arrow {\r\n    width: 48px;\r\n    height: 48px;\r\n    fill: currentColor;\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 50%;\r\n    transform: translate(-50%, 0);\r\n    animation: bounce 3s infinite;\r\n}\r\n\r\n@keyframes bounce {\r\n    0%, 5%, 15%, 25% {\r\n        transform: translate(-50%, 0);\r\n        transform: translate(-50%, 0);\r\n    }\r\n\r\n    10% {\r\n        transform: translate(-50%, -20px);\r\n        transform: translate(-50%, -20px);\r\n    }\r\n\r\n    20% {\r\n        transform: translate(-50%, -10px);\r\n        transform: translate(-50%, -10px);\r\n    }\r\n}",".portfolio {\r\n    width: 1110px;\r\n    // height: 100vh;\r\n    margin: 80px auto 115px;\r\n    // display: flex;\r\n    // flex-direction: column;\r\n    // flex-wrap: wrap;\r\n}\r\n\r\n.portfolio-container {\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    grid-auto-rows: 540px;\r\n    grid-column-gap: 20px;\r\n    grid-row-gap: 20px;\r\n}\r\n\r\n.portfolio-card-picture {\r\n    object-fit: cover;\r\n\r\n    &__img {\r\n        width: 100%;\r\n        height: 100%;\r\n    }\r\n}\r\n\r\n.portfilio-title {\r\n    text-align: center;\r\n    font-weight: 700;\r\n    font-size: 46px;\r\n    line-height: 1.3;\r\n    text-align: center;\r\n    color: #000;\r\n}\r\n\r\n.portfolio-card {\r\n    background-color: #fff;\r\n    width: 540px;\r\n    height: 500px;\r\n    padding: 20px;\r\n}\r\n\r\n.portfolio-card p {\r\n    font-size: 16px;\r\n    line-height: 1.3;\r\n    color: #000;\r\n}\r\n\r\n.portfolio-card-img {\r\n    max-width: 500px;\r\n}\r\n\r\n.porfolio-card__title {\r\n    margin-bottom: 13px;\r\n    font-weight: 600;\r\n    font-size: 24px;\r\n    line-height: 1.3;\r\n    color: #000;\r\n}",".footer {\r\n    margin: 0 auto;\r\n    max-width: 1110px;\r\n    height: 250px;\r\n    background-color: aqua;\r\n}"],"sourceRoot":""}]);
+.portfolio-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px 20px;
+}
+@media (max-width: 768px) {
+  .portfolio-cards {
+    grid-template-columns: 1fr;
+  }
+}
+.portfolio-cards__elem {
+  min-width: 0;
+}
+
+.copyright {
+  color: #7e9ec9;
+}
+@media (max-width: 1024px) {
+  .copyright {
+    text-align: center;
+  }
+}
+.copyright__title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.copyright__info {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.social-link__img {
+  width: 25px;
+  height: 30px;
+}
+
+.social-links {
+  margin-top: 14px;
+}
+@media (max-width: 768px) {
+  .social-links {
+    margin-top: 0;
+  }
+}
+.social-links__title {
+  font-weight: 600;
+  line-height: 1.3;
+  font-size: 16px;
+  color: #fff;
+}
+@media (max-width: 1024px) {
+  .social-links__title {
+    text-align: center;
+  }
+}
+@media (max-width: 320px) {
+  .social-links__title {
+    text-align: center;
+  }
+}
+.social-links__list {
+  margin-top: 10px;
+  display: flex;
+  gap: 30px;
+}
+@media (max-width: 1024px) {
+  .social-links__list {
+    justify-content: center;
+  }
+}
+
+.feedback {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+@media (max-width: 1024px) {
+  .feedback {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .feedback {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+.feedback__description {
+  margin-top: 15px;
+  font-size: 16px;
+  line-height: 1.3;
+  color: #7e9ec9;
+}
+@media (max-width: 1024px) {
+  .feedback__description {
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .feedback__description {
+    text-align: center;
+  }
+}
+
+.button {
+  padding: 15px 30px;
+  display: inline-block;
+  border-radius: 50px;
+  border: 3px solid currentColor;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  background-color: #374562;
+  color: #fff;
+}
+@media (max-width: 1024px) {
+  .button {
+    font-size: 13px;
+  }
+}`, "",{"version":3,"sources":["webpack://./src/style/fonts.scss","webpack://./src/index.scss","webpack://./src/style/reset.scss","webpack://./src/style/normalize.scss","webpack://./src/style/blocks/first-screen.scss","webpack://./src/style/var.scss","webpack://./src/style/blocks/section-portfolio.scss","webpack://./src/style/blocks/footer.scss","webpack://./src/style/blocks/container.scss","webpack://./src/style/blocks/porfolio-card-picture.scss","webpack://./src/style/blocks/portfolio-card.scss","webpack://./src/style/blocks/portfolio-cards.scss","webpack://./src/style/blocks/copyright.scss","webpack://./src/style/blocks/social-links.scss","webpack://./src/style/blocks/feedback.scss","webpack://./src/style/blocks/buttons.scss"],"names":[],"mappings":"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","sourcesContent":["@font-face {\r\n    font-family: 'Montserrat';\r\n    src: url('fonts/Montserrat-Regular.woff2') format('woff2');\r\n    font-weight: 400;\r\n    font-style: normal;\r\n}\r\n\r\n@font-face {\r\n    font-family: 'Montserrat';\r\n    src: url('fonts/Montserrat-SemiBold.woff2') format('woff2');\r\n    font-weight: 600;\r\n    font-style: normal;\r\n}\r\n\r\n@font-face {\r\n    font-family: 'Montserrat';\r\n    src: url('fonts/Montserrat-Bold.woff2') format('woff2');\r\n    font-weight: 700;\r\n    font-style: normal;\r\n}","@font-face {\n  font-family: \"Montserrat\";\n  src: url(\"fonts/Montserrat-Regular.woff2\") format(\"woff2\");\n  font-weight: 400;\n  font-style: normal;\n}\n@font-face {\n  font-family: \"Montserrat\";\n  src: url(\"fonts/Montserrat-SemiBold.woff2\") format(\"woff2\");\n  font-weight: 600;\n  font-style: normal;\n}\n@font-face {\n  font-family: \"Montserrat\";\n  src: url(\"fonts/Montserrat-Bold.woff2\") format(\"woff2\");\n  font-weight: 700;\n  font-style: normal;\n}\n* {\n  margin: 0;\n}\n\na {\n  text-decoration: none;\n}\n\nbutton {\n  font-family: inherit;\n}\n\n*, *::before, *::after {\n  box-sizing: border-box;\n}\n\nbody {\n  font-family: \"Montserrat\", sans-serif;\n}\n\n.first-screen {\n  height: 100vh;\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  background-image: url(img/background-fist-screen-2.jpg);\n  background-size: cover;\n  background-position: center;\n  color: #fff;\n}\n.first-screen__title {\n  margin-bottom: 25px;\n  font-weight: 700;\n  font-size: 56px;\n  line-height: 1.3;\n  text-align: center;\n}\n@media (max-width: 425px) {\n  .first-screen__title {\n    font-size: 36px;\n  }\n}\n.first-screen__subtitle {\n  font-weight: 700;\n  font-size: 16px;\n  line-height: 1.5;\n  letter-spacing: 0.2em;\n  text-transform: uppercase;\n}\n@media (max-width: 425px) {\n  .first-screen__subtitle {\n    font-size: 20px;\n  }\n}\n.first-screen__arrow {\n  width: 48px;\n  height: 48px;\n  fill: currentColor;\n  position: absolute;\n  bottom: 20px;\n  left: 50%;\n  transform: translate(-50%, 0);\n  animation: bounce 3s infinite;\n}\n\n@keyframes bounce {\n  0%, 5%, 15%, 25% {\n    transform: translate(-50%, 0);\n    transform: translate(-50%, 0);\n  }\n  10% {\n    transform: translate(-50%, -20px);\n    transform: translate(-50%, -20px);\n  }\n  20% {\n    transform: translate(-50%, -10px);\n    transform: translate(-50%, -10px);\n  }\n}\n.portfolio {\n  margin-top: 80px;\n}\n@media (max-width: 768px) {\n  .portfolio__cards {\n    margin: 0 auto;\n    max-width: 400px;\n  }\n}\n.portfolio__title {\n  padding-bottom: 70px;\n  font-weight: 700;\n  font-size: 46px;\n  line-height: 1.3;\n  text-align: center;\n  color: #000;\n}\n@media (max-width: 425px) {\n  .portfolio__title {\n    font-size: 24px;\n  }\n}\n\n.footer {\n  margin-top: 115px;\n  background-color: #374562;\n  color: #fff;\n}\n.footer__container {\n  --container-vertical-padding: 40px;\n  min-height: 290px;\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n  grid-gap: 10px;\n}\n@media (max-width: 768px) {\n  .footer__container {\n    grid-template-columns: 1fr;\n    justify-content: center;\n    grid-gap: 30px;\n  }\n}\n\n.container {\n  max-width: 1110px;\n  margin: 0 auto;\n  padding: var(--container-vertical-padding) 20px;\n}\n\n.portfolio-card-picture {\n  aspect-ratio: 16/9;\n}\n.portfolio-card-picture__img {\n  object-fit: cover;\n  width: 100%;\n  height: 100%;\n}\n\n.portfolio-card {\n  padding: 20px;\n  box-shadow: 0px 10px 40px rgba(193, 225, 240, 0.35);\n}\n.portfolio-card__description {\n  font-size: 16px;\n  line-height: 1.3;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  color: #232324;\n}\n@media (max-width: 768px) {\n  .portfolio-card__description {\n    text-align: center;\n  }\n}\n@media (max-width: 425px) {\n  .portfolio-card__description {\n    font-size: 14px;\n  }\n}\n.portfolio-card__title {\n  margin-top: 20px;\n  margin-bottom: 13px;\n  font-weight: 600;\n  font-size: 24px;\n  line-height: 1.3;\n  color: #232324;\n}\n@media (max-width: 768px) {\n  .portfolio-card__title {\n    text-align: center;\n  }\n}\n@media (max-width: 425px) {\n  .portfolio-card__title {\n    font-size: 20px;\n  }\n}\n\n.portfolio-cards {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-gap: 30px 20px;\n}\n@media (max-width: 768px) {\n  .portfolio-cards {\n    grid-template-columns: 1fr;\n  }\n}\n.portfolio-cards__elem {\n  min-width: 0;\n}\n\n.copyright {\n  color: #7e9ec9;\n}\n@media (max-width: 1024px) {\n  .copyright {\n    text-align: center;\n  }\n}\n.copyright__title {\n  font-size: 28px;\n  font-weight: 700;\n  line-height: 1.3;\n}\n.copyright__info {\n  margin-top: 10px;\n  font-size: 16px;\n  font-weight: 600;\n  line-height: 1.3;\n}\n\n.social-link__img {\n  width: 25px;\n  height: 30px;\n}\n\n.social-links {\n  margin-top: 14px;\n}\n@media (max-width: 768px) {\n  .social-links {\n    margin-top: 0;\n  }\n}\n.social-links__title {\n  font-weight: 600;\n  line-height: 1.3;\n  font-size: 16px;\n  color: #fff;\n}\n@media (max-width: 1024px) {\n  .social-links__title {\n    text-align: center;\n  }\n}\n@media (max-width: 320px) {\n  .social-links__title {\n    text-align: center;\n  }\n}\n.social-links__list {\n  margin-top: 10px;\n  display: flex;\n  gap: 30px;\n}\n@media (max-width: 1024px) {\n  .social-links__list {\n    justify-content: center;\n  }\n}\n\n.feedback {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n}\n@media (max-width: 1024px) {\n  .feedback {\n    display: flex;\n    align-items: center;\n    flex-direction: column;\n  }\n}\n@media (max-width: 768px) {\n  .feedback {\n    display: flex;\n    justify-content: center;\n    flex-wrap: wrap;\n  }\n}\n.feedback__description {\n  margin-top: 15px;\n  font-size: 16px;\n  line-height: 1.3;\n  color: #7e9ec9;\n}\n@media (max-width: 1024px) {\n  .feedback__description {\n    text-align: center;\n  }\n}\n@media (max-width: 768px) {\n  .feedback__description {\n    text-align: center;\n  }\n}\n\n.button {\n  padding: 15px 30px;\n  display: inline-block;\n  border-radius: 50px;\n  border: 3px solid currentColor;\n  font-weight: 700;\n  font-size: 16px;\n  text-transform: uppercase;\n  background-color: #374562;\n  color: #fff;\n}\n@media (max-width: 1024px) {\n  .button {\n    font-size: 13px;\n  }\n}","* {\r\n    margin: 0;\r\n}\r\n\r\na {\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    font-family: inherit;\r\n}","*, *::before, *::after  {\r\n    box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n    font-family: \"Montserrat\", sans-serif;\r\n}",".first-screen {\r\n    height: 100vh;\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: center;\r\n    background-image: url(img/background-fist-screen-2.jpg); \r\n    background-size: cover;\r\n    background-position: center;\r\n    color: $dark-theme-clr-text-1;\r\n\r\n    &__title {\r\n        margin-bottom: 25px;\r\n        font-weight: 700;\r\n        font-size: 56px;\r\n        line-height: 1.3;\r\n        text-align: center;\r\n\r\n        @media (max-width: 425px) {\r\n            font-size: 36px;\r\n        }\r\n    }\r\n\r\n    &__subtitle {\r\n        font-weight: 700;\r\n        font-size: 16px;\r\n        line-height: 1.5;\r\n        letter-spacing: 0.2em;\r\n        text-transform: uppercase;\r\n\r\n        @media (max-width: 425px) {\r\n            font-size: 20px;\r\n        }\r\n    }\r\n\r\n    &__arrow {\r\n        width: 48px;\r\n        height: 48px;\r\n        fill: currentColor;\r\n        position: absolute;\r\n        bottom: 20px;\r\n        left: 50%;\r\n        transform: translate(-50%, 0);\r\n        animation: bounce 3s infinite;\r\n    }\r\n}\r\n\r\n@keyframes bounce {\r\n    0%, 5%, 15%, 25% {\r\n        transform: translate(-50%, 0);\r\n        transform: translate(-50%, 0);\r\n    }\r\n\r\n    10% {\r\n        transform: translate(-50%, -20px);\r\n        transform: translate(-50%, -20px);\r\n    }\r\n\r\n    20% {\r\n        transform: translate(-50%, -10px);\r\n        transform: translate(-50%, -10px);\r\n    }\r\n}","$dark-theme-clr: #374562;\r\n$dark-theme-clr-text-1: #fff; \r\n$dark-theme-clr-text-2: #7e9ec9; \r\n\r\n$light-theme-clr: #fff;\r\n$light-theme-clr-text: #232324;\r\n$light-theme-box-shadow: rgba(193, 225, 240, 0.35);\r\n",".portfolio {\r\n    margin-top: 80px;\r\n\r\n    &__cards {\r\n        @media (max-width: 768px) {\r\n            margin: 0 auto;\r\n            max-width: 400px;\r\n        }\r\n    }\r\n\r\n    &__title {\r\n        padding-bottom: 70px;\r\n        font-weight: 700;\r\n        font-size: 46px;\r\n        line-height: 1.3;\r\n        text-align: center;\r\n        color: #000;\r\n\r\n        @media (max-width: 425px) {\r\n            font-size: 24px;\r\n        }\r\n    }\r\n}",".footer {\r\n    margin-top: 115px;\r\n    background-color: $dark-theme-clr;\r\n    color: $dark-theme-clr-text-1;\r\n\r\n\r\n    &__container {\r\n        --container-vertical-padding: 40px;\r\n        min-height: 290px;\r\n        display: grid;\r\n        grid-template-columns: 1fr 1fr 1fr;\r\n        grid-gap: 10px;\r\n\r\n        @media (max-width: 768px) {\r\n            grid-template-columns: 1fr;\r\n            justify-content: center;\r\n            grid-gap: 30px;\r\n        }\r\n    }\r\n}",".container {\r\n    max-width: 1110px;\r\n    margin: 0 auto;\r\n    padding: var(--container-vertical-padding) 20px;\r\n}",".portfolio-card-picture {\r\n    aspect-ratio: 16 / 9;\r\n\r\n    &__img {\r\n        object-fit: cover;\r\n        width: 100%;\r\n        height: 100%;\r\n    }\r\n}",".portfolio-card {\r\n    padding: 20px;\r\n    box-shadow: 0px 10px 40px $light-theme-box-shadow;\r\n\r\n    &__description {\r\n        font-size: 16px;\r\n        line-height: 1.3;\r\n        white-space: nowrap;\r\n        overflow: hidden;\r\n        text-overflow: ellipsis;\r\n        color: $light-theme-clr-text;\r\n\r\n\r\n        @media (max-width: 768px) {\r\n            text-align: center;\r\n        }\r\n\r\n        @media (max-width: 425px) {\r\n            font-size: 14px;\r\n        }\r\n    }\r\n\r\n    &__title {\r\n        margin-top: 20px;\r\n        margin-bottom: 13px;\r\n        font-weight: 600;\r\n        font-size: 24px;\r\n        line-height: 1.3;\r\n        color: $light-theme-clr-text;\r\n\r\n\r\n        @media (max-width: 768px) {\r\n            text-align: center;\r\n        }\r\n\r\n        @media (max-width: 425px) {\r\n            font-size: 20px;\r\n        }\r\n    }\r\n}",".portfolio-cards {\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    grid-gap: 30px 20px;\r\n\r\n    @media (max-width: 768px) {\r\n        grid-template-columns: 1fr;\r\n    }\r\n\r\n    &__elem {\r\n        min-width: 0;\r\n    }\r\n}",".copyright {\r\n    color: $dark-theme-clr-text-2;\r\n\r\n    @media (max-width: 1024px) {\r\n        text-align: center;\r\n    }\r\n\r\n    &__title {\r\n        font-size: 28px;\r\n        font-weight: 700;\r\n        line-height: 1.3;\r\n    }\r\n\r\n    &__info {\r\n        margin-top: 10px;\r\n        font-size: 16px;\r\n        font-weight: 600;\r\n        line-height: 1.3;\r\n    }\r\n\r\n}",".social-link {\r\n    &__img {\r\n        width: 25px;\r\n        height: 30px;\r\n    }\r\n}\r\n\r\n.social-links {\r\n    margin-top: 14px;\r\n\r\n    @media (max-width: 768px) {\r\n        margin-top: 0;\r\n    }\r\n\r\n    &__title {        \r\n        font-weight: 600;\r\n        line-height: 1.3;\r\n        font-size: 16px;\r\n        color: $dark-theme-clr-text-1;\r\n\r\n        @media (max-width: 1024px) {\r\n            text-align: center;\r\n        }\r\n\r\n        @media (max-width: 320px) {\r\n            text-align: center;\r\n        }\r\n    }\r\n\r\n    &__list {\r\n        margin-top: 10px;\r\n        display: flex;\r\n        gap: 30px;\r\n\r\n        @media (max-width: 1024px) {\r\n            justify-content: center;\r\n        }\r\n    }\r\n}\r\n",".feedback {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: flex-start;\r\n\r\n    @media (max-width: 1024px) {\r\n        display: flex;\r\n        align-items: center;\r\n        flex-direction: column;\r\n    }\r\n\r\n\r\n    @media (max-width: 768px) {\r\n        display: flex;\r\n        justify-content: center;\r\n        flex-wrap: wrap;\r\n    }\r\n\r\n    &__description {\r\n        margin-top: 15px;\r\n        font-size: 16px;\r\n        line-height: 1.3;\r\n        color: $dark-theme-clr-text-2;\r\n\r\n        @media (max-width: 1024px) {\r\n            text-align: center;\r\n        }\r\n\r\n\r\n        @media (max-width: 768px) {\r\n            text-align: center;\r\n        }\r\n    }\r\n}",".button {\r\n    padding: 15px 30px;\r\n    display: inline-block;\r\n    border-radius: 50px;\r\n    border: 3px solid currentColor;\r\n    font-weight: 700;\r\n    font-size: 16px;\r\n    text-transform: uppercase;\r\n    background-color: #374562;\r\n    color: $dark-theme-clr-text-1;\r\n\r\n    @media (max-width: 1024px) {\r\n        font-size: 13px;\r\n    }\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -9460,12 +9635,20 @@ var ___HTML_LOADER_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(
 var ___HTML_LOADER_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ./img/landing-2.jpg */ "./src/img/landing-2.jpg"), __webpack_require__.b);
 var ___HTML_LOADER_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(/*! ./img/landing-3.webp */ "./src/img/landing-3.webp"), __webpack_require__.b);
 var ___HTML_LOADER_IMPORT_3___ = new URL(/* asset import */ __webpack_require__(/*! ./img/landing-4.webp */ "./src/img/landing-4.webp"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_4___ = new URL(/* asset import */ __webpack_require__(/*! ./img/social/dribbble.svg */ "./src/img/social/dribbble.svg"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_5___ = new URL(/* asset import */ __webpack_require__(/*! ./img/social/youtube.svg */ "./src/img/social/youtube.svg"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_6___ = new URL(/* asset import */ __webpack_require__(/*! ./img/social/instagram.svg */ "./src/img/social/instagram.svg"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_7___ = new URL(/* asset import */ __webpack_require__(/*! ./img/social/twitter.svg */ "./src/img/social/twitter.svg"), __webpack_require__.b);
 // Module
 var ___HTML_LOADER_REPLACEMENT_0___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_0___);
 var ___HTML_LOADER_REPLACEMENT_1___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_1___);
 var ___HTML_LOADER_REPLACEMENT_2___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_2___);
 var ___HTML_LOADER_REPLACEMENT_3___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_3___);
-var code = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>Document</title>\r\n</head>\r\n<body>\r\n<main>   \r\n    <section class=\"first-screen\">\r\n        <h1 class=\"first-screen__title\">\r\n            Олег Игнатьев\r\n        </h1>\r\n        <p class=\"first-screen__subtitle\">\r\n            Html-верстальщик\r\n        </p>    \r\n        <svg class=\"first-screen__arrow\" viewBox=\"0 -4.5 20 20\">\r\n            <path fill-rule=\"evenodd\" d=\"M.3.4a1 1 0 0 0 0 1.4l8.3 8.6c.7.8 2 .8 2.8 0l8.3-8.6c.4-.4.4-1 0-1.5a1 1 0 0 0-1.4 0l-7.6 7.9a1 1 0 0 1-1.4 0L1.7.4A1 1 0 0 0 .3.4\"/>\r\n        </svg>          \r\n    </section>\r\n\r\n    <section class=\"portfolio\">\r\n        <h2 class=\"portfilio-title\">Портфолио</h2>\r\n        <div class=\"portfolio-container\">\r\n            <article class=\"portfolio-card\">\r\n                <div class=\"portfolio-card-picture\">\r\n                    <img class=\"portfolio-card-picture__img\" src=\"" + ___HTML_LOADER_REPLACEMENT_0___ + "\" alt=\"job-1\">\r\n                </div>\r\n                <h3 class=\"porfolio-card__title\">\r\n                    Многостраничный сайт\r\n                </h3>\r\n                <p>Верстрка многостраничного сайта</p>\r\n            </article>\r\n\r\n            <article class=\"portfolio-card\">\r\n                <div class=\"portfolio-card-picture\">\r\n                    <img class=\"portfolio-card-picture__img\" src=\"" + ___HTML_LOADER_REPLACEMENT_1___ + "\" alt=\"job-2\">\r\n                </div>\r\n                <h3 class=\"porfolio-card__title\">\r\n                    Многостраничный сайт\r\n                </h3>\r\n                <p>Верстрка многостраничного сайта</p>\r\n            </article>\r\n\r\n            <article class=\"portfolio-card\">\r\n                <div class=\"portfolio-card-picture\">\r\n                    <img class=\"portfolio-card-picture__img\" src=\"" + ___HTML_LOADER_REPLACEMENT_2___ + "\" alt=\"job-3\">\r\n                </div>\r\n                <h3 class=\"porfolio-card__title\">\r\n                    Многостраничный сайт\r\n                </h3>\r\n                <p>Верстрка многостраничного сайта</p>\r\n            </article>\r\n\r\n            <article class=\"portfolio-card\">\r\n                <div class=\"portfolio-card-picture\">\r\n                    <img class=\"portfolio-card-picture__img\" src=\"" + ___HTML_LOADER_REPLACEMENT_3___ + "\" alt=\"job-4\">\r\n                </div>\r\n                <h3 class=\"porfolio-card__title\">\r\n                    Многостраничный сайт\r\n                </h3>\r\n                <p>Верстрка многостраничного сайта</p>\r\n            </article>\r\n    </section>\r\n        </div>\r\n\r\n</main>\r\n\r\n<footer class=\"footer\">\r\n    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores eveniet repudiandae molestiae. Alias, consequuntur facilis suscipit earum consequatur aut placeat! Nesciunt, placeat illum? Cumque, eos sequi. Excepturi fuga odit beatae.</p>\r\n</footer>\r\n\r\n\r\n</body>\r\n</html>";
+var ___HTML_LOADER_REPLACEMENT_4___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_4___);
+var ___HTML_LOADER_REPLACEMENT_5___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_5___);
+var ___HTML_LOADER_REPLACEMENT_6___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_6___);
+var ___HTML_LOADER_REPLACEMENT_7___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_7___);
+var code = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>Document</title>\r\n</head>\r\n<body>\r\n<main>   \r\n    <section class=\"first-screen\">\r\n        <h1 class=\"first-screen__title\">\r\n            Олег Игнатьев\r\n        </h1>\r\n        <div class=\"first-screen__subtitle\">\r\n            Html-верстальщик\r\n        </div>    \r\n        <svg class=\"first-screen__arrow\" viewBox=\"0 -4.5 20 20\">\r\n            <path fill-rule=\"evenodd\" d=\"M.3.4a1 1 0 0 0 0 1.4l8.3 8.6c.7.8 2 .8 2.8 0l8.3-8.6c.4-.4.4-1 0-1.5a1 1 0 0 0-1.4 0l-7.6 7.9a1 1 0 0 1-1.4 0L1.7.4A1 1 0 0 0 .3.4\"/>\r\n        </svg>          \r\n    </section>\r\n\r\n    <section class=\"portfolio\">\r\n        <div class=\"container\">\r\n            <h2 class=\"portfolio__title\">Портфолио</h2>\r\n            <div class=\"portfolio__cards portfolio-cards\">\r\n                <article class=\"portfolio-card portfolio-cards__elem\">\r\n                    <div class=\"portfolio-card-picture\">\r\n                        <img class=\"portfolio-card-picture__img\" src=\"" + ___HTML_LOADER_REPLACEMENT_0___ + "\" alt=\"job-1\">\r\n                    </div>\r\n                    <h3 class=\"portfolio-card__title\">\r\n                        Многостраничный сайт\r\n                    </h3>\r\n                    <div class=\"portfolio-card__description\">Верстрка многостраничного сайта</div>\r\n                </article>\r\n\r\n                <article class=\"portfolio-card portfolio-cards__elem\">\r\n                    <div class=\"portfolio-card-picture\">\r\n                        <img class=\"portfolio-card-picture__img\" src=\"" + ___HTML_LOADER_REPLACEMENT_1___ + "\" alt=\"job-2\">\r\n                    </div>\r\n                    <h3 class=\"portfolio-card__title\">\r\n                        Многостраничный сайт\r\n                    </h3>\r\n                    <div class=\"portfolio-card__description\">Верстрка многостраничного сайта</div>\r\n                </article>\r\n\r\n                <article class=\"portfolio-card portfolio-cards__elem\">\r\n                    <div class=\"portfolio-card-picture\">\r\n                        <img class=\"portfolio-card-picture__img\" src=\"" + ___HTML_LOADER_REPLACEMENT_2___ + "\" alt=\"job-3\">\r\n                    </div>\r\n                    <h3 class=\"portfolio-card__title\">\r\n                        Многостраничный сайт\r\n                    </h3>\r\n                    <div class=\"portfolio-card__description\">Верстрка многостраничного сайта с применением современных инструментов веб-разработки</div>\r\n                </article>\r\n\r\n                <article class=\"portfolio-card portfolio-cards__elem\">\r\n                    <div class=\"portfolio-card-picture\">\r\n                        <img class=\"portfolio-card-picture__img\" src=\"" + ___HTML_LOADER_REPLACEMENT_3___ + "\" alt=\"job-4\">\r\n                    </div>\r\n                    <h3 class=\"portfolio-card__title\">\r\n                        Многостраничный сайт\r\n                    </h3>\r\n                    <div class=\"portfolio-card__description\">Верстрка многостраничного сайта</div>\r\n                </article>\r\n            </div>\r\n            \r\n        </div>\r\n    </section>\r\n\r\n</main>\r\n\r\n<footer class=\"footer\">\r\n    <div class=\"footer__container container\">\r\n        <div class=\"copyright\">\r\n            <div class=\"copyright__title\">\r\n                © Олег Игнатьев\r\n            </div>\r\n            <div class=\"copyright__info\">\r\n                Html-верстальщик\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"social-links\">\r\n            <div class=\"social-links__title\">\r\n                Мои профили в социальных сетях:\r\n            </div>\r\n\r\n            <div class=\"social-links__list\">\r\n                <a class=\"social-link\" href=\"#\"><img class=\"social-link__img\" src=\"" + ___HTML_LOADER_REPLACEMENT_4___ + "\" alt=\"dribbble\"></a>\r\n                <a class=\"social-link\" href=\"#\"><img class=\"social-link__img\" src=\"" + ___HTML_LOADER_REPLACEMENT_5___ + "\" alt=\"youtube\"></a>\r\n                <a class=\"social-link\" href=\"#\"><img class=\"social-link__img\" src=\"" + ___HTML_LOADER_REPLACEMENT_6___ + "\" alt=\"instagram\"></a>\r\n                <a class=\"social-link\" href=\"#\"><img class=\"social-link__img\" src=\"" + ___HTML_LOADER_REPLACEMENT_7___ + "\" alt=\"twitter\"></a>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"feedback\">\r\n            <button class=\"button\">\r\n                Связаться вконтакте\r\n            </button>\r\n\r\n            <div class=\"feedback__description\">\r\n                Напиши мне, чтобы заказать или узнать стоимость верстки вашего проекта\r\n            </div>\r\n        </div>\r\n    </div>\r\n</footer>\r\n\r\n\r\n</body>\r\n</html>";
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);
 
@@ -10600,14 +10783,14 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
-/***/ "./src/fonts/Montserrat-ExtraBold.woff2":
-/*!**********************************************!*\
-  !*** ./src/fonts/Montserrat-ExtraBold.woff2 ***!
-  \**********************************************/
+/***/ "./src/fonts/Montserrat-Bold.woff2":
+/*!*****************************************!*\
+  !*** ./src/fonts/Montserrat-Bold.woff2 ***!
+  \*****************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-module.exports = __webpack_require__.p + "fonts/Montserrat-ExtraBold.woff2";
+module.exports = __webpack_require__.p + "fonts/Montserrat-Bold.woff2";
 
 /***/ }),
 
@@ -10633,14 +10816,14 @@ module.exports = __webpack_require__.p + "fonts/Montserrat-SemiBold.woff2";
 
 /***/ }),
 
-/***/ "./src/img/background-fist-screen.jpg":
-/*!********************************************!*\
-  !*** ./src/img/background-fist-screen.jpg ***!
-  \********************************************/
+/***/ "./src/img/background-fist-screen-2.jpg":
+/*!**********************************************!*\
+  !*** ./src/img/background-fist-screen-2.jpg ***!
+  \**********************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-module.exports = __webpack_require__.p + "assets/02156b190ef638b79030.jpg";
+module.exports = __webpack_require__.p + "assets/d3402cf8e3d803ad31dc.jpg";
 
 /***/ }),
 
@@ -10651,7 +10834,7 @@ module.exports = __webpack_require__.p + "assets/02156b190ef638b79030.jpg";
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-module.exports = __webpack_require__.p + "assets/5854714410aa9300531b.jpg";
+module.exports = __webpack_require__.p + "assets/bff576ff788efc3e4341.jpg";
 
 /***/ }),
 
@@ -10662,7 +10845,7 @@ module.exports = __webpack_require__.p + "assets/5854714410aa9300531b.jpg";
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-module.exports = __webpack_require__.p + "assets/82bb30c534e50e46d63a.jpg";
+module.exports = __webpack_require__.p + "assets/0087a4f477a4750df474.jpg";
 
 /***/ }),
 
@@ -10685,6 +10868,50 @@ module.exports = __webpack_require__.p + "assets/913bf8a8e61d20ac00c1.webp";
 
 "use strict";
 module.exports = __webpack_require__.p + "assets/67c272f76fca92f66686.webp";
+
+/***/ }),
+
+/***/ "./src/img/social/dribbble.svg":
+/*!*************************************!*\
+  !*** ./src/img/social/dribbble.svg ***!
+  \*************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/9441f4ef334b7272bb14.svg";
+
+/***/ }),
+
+/***/ "./src/img/social/instagram.svg":
+/*!**************************************!*\
+  !*** ./src/img/social/instagram.svg ***!
+  \**************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/5410dca9ed440b375f14.svg";
+
+/***/ }),
+
+/***/ "./src/img/social/twitter.svg":
+/*!************************************!*\
+  !*** ./src/img/social/twitter.svg ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/f5399605143d8c8e26cc.svg";
+
+/***/ }),
+
+/***/ "./src/img/social/youtube.svg":
+/*!************************************!*\
+  !*** ./src/img/social/youtube.svg ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/5494c46542410c7a142f.svg";
 
 /***/ })
 
@@ -10862,4 +11089,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=main.09cb84c19214a48b9f14.js.map
+//# sourceMappingURL=main.491caffdf0eeef76cfd8.js.map

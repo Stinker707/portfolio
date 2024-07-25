@@ -1,0 +1,23 @@
+.feedback {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: var(--feefback-align-items, flex-start);
+
+    @media (max-width: $l) {
+        --feefback-align-items: center;
+    }
+
+    @media (max-width: $m) {
+        justify-content: center;
+    }
+
+    &__description {
+        font-size: 16px;
+        color: $dark-theme-clr-text-2;
+
+        @media (max-width: $l) {
+            text-align: center;
+        }
+    }
+}

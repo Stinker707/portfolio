@@ -1,0 +1,29 @@
+.social-links {
+    margin-top: var(--social-links-margin-top, 14px);
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    
+    @media (max-width: $l) {
+        align-items: center;
+    }
+
+    @media (max-width: $m) {
+        --social-links-margin-top: 0;
+    }
+
+    &__title {        
+        font-weight: 600;
+        font-size: 16px;
+        color: $dark-theme-clr-text-1;
+        
+        @media (max-width: $l) {
+            text-align: center;
+        }
+    }
+
+    &__list {
+        display: flex;
+        gap: 30px;
+    }
+}

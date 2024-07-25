@@ -1,14 +1,20 @@
 .footer {
     margin-top: 115px;
-    background-color: #374562;
-    color: #fff;
+    background-color: $dark-theme-clr;
+    color: $dark-theme-clr-text-1;
 
 
     &__container {
         --container-vertical-padding: 40px;
         min-height: 290px;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 10px;
+        grid-template-columns: var(--footer-container-greed-templete-columns, 1fr 1fr 1fr);
+        grid-gap: var(--footer-container-grid-gap, 10px);
+
+        @media (max-width: $m) {
+            --footer-container-greed-templete-columns: 1fr;
+            justify-content: center;
+            --footer-container-grid-gap: 30px;
+        }
     }
 }

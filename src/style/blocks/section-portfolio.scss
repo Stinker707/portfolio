@@ -2,7 +2,7 @@
     margin-top: 80px;
 
     &__cards {
-        @media (max-width: $m) {
+        @media (max-width: $tablet) {
             margin: 0 auto;
             max-width: 400px;
         }
@@ -15,7 +15,7 @@
         text-align: center;
         color: $light-theme-clr-text;
 
-        @media (max-width: $s) {
+        @media (max-width: $mobile-m) {
             --portfolio-title-font-size: 24px;
         }
     }

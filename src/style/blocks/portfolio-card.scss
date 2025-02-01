@@ -10,13 +10,18 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        cursor: pointer;
 
-        @media (max-width: $m) {
+        @media (max-width: $tablet) {
             text-align: center;
         }
 
-        @media (max-width: $s) {
+        @media (max-width: $mobile-m) {
             --portfolio-card-title-font-size: 20px;
+        }
+
+        &:hover {
+            color: $dark-theme-clr;
         }
     }
 
@@ -28,12 +33,21 @@
         text-overflow: ellipsis;
         color: $light-theme-clr-text;
 
-        @media (max-width: $m) {
+        @media (max-width: $tablet) {
             text-align: center;
         }
 
-        @media (max-width: $s) {
+        @media (max-width: $mobile-m) {
             --portfolio-card-description-font-size: 14px;
+        }
+    }
+
+    &__picture {
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+
+        &:hover {
+            transform:  translateY(-10px);
         }
     }
 }

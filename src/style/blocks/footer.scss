@@ -11,7 +11,7 @@
         grid-template-columns: var(--footer-container-greed-templete-columns, 1fr 1fr 1fr);
         grid-gap: var(--footer-container-grid-gap, 10px);
 
-        @media (max-width: $m) {
+        @media (max-width: $tablet) {
             --footer-container-greed-templete-columns: 1fr;
             justify-content: center;
             --footer-container-grid-gap: 30px;

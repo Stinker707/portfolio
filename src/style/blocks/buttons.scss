@@ -1,4 +1,5 @@
 .button {
+    position: relative;
     padding: 15px 30px;
     border-radius: 50px;
     border: 3px solid currentColor;
@@ -7,8 +8,37 @@
     text-transform: uppercase;
     background-color: $dark-theme-clr;
     color: $dark-theme-clr-text-1;
-
-    @media (max-width: $l) {
+    overflow: hidden;
+    
+    @media (max-width: $laptop) {
         --button-font-size: 13px;
     }
+
+    &::before {
+       content: '';
+       position: absolute;
+       left: 0;
+       bottom: 0;
+       top: 0;
+       right: 100%;
+       background: $btn-bg-clr;
+       border-radius: 50px;
+       z-index: 1;
+       transition: right 0.3s ease-in-out;
+    }
+    
+    &:hover {
+        cursor: pointer;
+        
+        &::before {
+            right: 0;
+        }
+        
+    }
+
+    &__text {
+        z-index: 2;
+        position: relative;
+    }
+
 }

@@ -3,7 +3,7 @@
     grid-template-columns: var(--portfolio-cards-greed-template-columns, 1fr 1fr);
     grid-gap: 30px 20px;
 
-    @media (max-width: $m) {
+    @media (max-width: $tablet) {
         --portfolio-cards-greed-template-columns: 1fr;
     }
 

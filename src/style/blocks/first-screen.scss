@@ -6,7 +6,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url(img/background-fist-screen-2.jpg); 
     background-size: cover;
     background-position: center;
     color: $dark-theme-clr-text-1;
@@ -16,7 +15,7 @@
         font-size: var(--first-screen-title-font-size, 56px);
         text-align: center;
 
-        @media (max-width: $s) {
+        @media (max-width: $mobile-m) {
             --first-screen-title-font-size: 36px;
         }
     }
@@ -28,7 +27,7 @@
         letter-spacing: 0.2em;
         text-transform: uppercase;
 
-        @media (max-width: $s) {
+        @media (max-width: $mobile-m) {
             --first-screen-subtitle-font-size: 20px;
         }
     }
@@ -42,6 +41,10 @@
         left: 50%;
         transform: translate(-50%, 0);
         animation: bounce 3s infinite;
+
+        &:hover {
+            animation-play-state: paused;
+        }
     }
 }
 

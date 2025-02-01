@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -29,17 +30,25 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'src', 'index.html')
+            template: path.resolve(__dirname, 'src', 'index.html'),
+            filename: 'index.html',
+            inject: 'body',
         }),
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].css',
-        })
+        }),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            _: 'lodash',
+        }),
     ],
     module: {
         rules: [
             {
-                test: /\.html$/i,
-                loader: 'html-loader',
+                test: /\.html$/,
+                use: [{loader: 'html-loader'}],
             },
             {
                 test: /\.(c|sa|sc)ss$/i,
@@ -64,23 +73,13 @@ module.exports = {
                     filename: 'fonts/[name][ext]'
                 }
             },
-            // {
-            //     test: /\.(jpe?g|png|webp|gif|svg)$/i,
-            //     use: [
-            //         {
-            //             loader: 'image-webpack-loader',
-            //             options: {
-            //                 optipng: {
-            //                     enabled: false,
-            //                 },
-            //                 pngquant: {
-            //                     quality: [1, 1],
-            //                 },
-            //             }
-            //         }
-            //     ],
-            //     type: 'asset/resource',
-            // },
+            {
+                test: /\.(mp4|webm|ogg)$/,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/video/[hash][ext]',
+                },
+            },
             {
                 test: /\.(?:js|mjs|cjs)$/i,
                 exclude: /node_modules/,
@@ -94,5 +93,5 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
 }

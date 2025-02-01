@@ -4,7 +4,7 @@
     flex-direction: column;
     gap: 10px;
 
-    @media (max-width: $l) {
+    @media (max-width: $laptop) {
         align-items: center;
     }
 

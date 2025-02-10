@@ -1,9 +1,10 @@
 import videoPath from '../video/background-fon.mp4';
+import previewPath from '../img/preview.png';
 
 document.addEventListener('DOMContentLoaded', function () {
     var instance = $('#header').vide({
         mp4: videoPath,
-        poster: 'path/to/fallback.jpg'
+        poster: previewPath,
     });
 
     var video = instance.getVideoObject();

@@ -1,7 +1,9 @@
 .portfolio {
-    margin-top: 80px;
+    padding-top: 80px;
 
     &__cards {
+        margin-top: 70px;
+
         @media (max-width: $tablet) {
             margin: 0 auto;
             max-width: 400px;
@@ -9,7 +11,6 @@
     }
 
     &__title {
-        margin-bottom: 70px;
         font-weight: 700;
         font-size: var(--portfolio-title-font-size, 46px);
         text-align: center;

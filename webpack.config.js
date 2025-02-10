@@ -74,6 +74,10 @@ module.exports = {
                 }
             },
             {
+                test: /\.(png|jpe?g|gif|svg)$/i,
+                type: 'asset/resource',
+            },
+            {
                 test: /\.(mp4|webm|ogg)$/,
                 type: 'asset/resource',
                 generator: {

@@ -78,7 +78,7 @@ module.exports = {
                 type: 'asset/resource',
             },
             {
-                test: /\.(mp4|webm|ogg)$/,
+                test: /\.(mp4|webm|ogg|ogv)$/,
                 type: 'asset/resource',
                 generator: {
                     filename: 'assets/video/[hash][ext]',

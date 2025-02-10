@@ -1,10 +1,14 @@
-import videoPath from '../video/background-fon.mp4';
+import videoPath1 from '../video/background-fon.mp4';
+import videoPath2 from '../video/background-fon.webm';
+import videoPath3 from '../video/background-fon.ogv';
 import previewPath from '../img/preview.png';
 
 document.addEventListener('DOMContentLoaded', function() {
     $('#vide').vide({
-        mp4: videoPath,
-        poster: previewPath
+        mp4: videoPath1,
+        webm: videoPath2,
+        ogv: videoPath3,
+        poster: previewPath,
     }, {
         muted: true,
         autoplay: true,

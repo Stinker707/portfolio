@@ -18,6 +18,12 @@
         bottom: 0;
         left: 0;
         z-index: 0;
+
+        @media not all and (min-resolution:.001dpcm) { 
+            @supports (-webkit-touch-callout: none) { // для safari
+                display: none;
+            }
+        }
     }
 
     &__title {

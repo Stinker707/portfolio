@@ -1,19 +1,19 @@
 import videoPath from '../video/background-fon.mp4';
 import previewPath from '../img/preview.png';
 
-document.addEventListener('DOMContentLoaded', function () {
-    var instance = $('#header').vide({
+document.addEventListener('DOMContentLoaded', function() {
+    $('#vide').vide({
         mp4: videoPath,
         poster: previewPath,
     });
 
-    var video = instance.getVideoObject();
-    if (video) {
-        video.setAttribute('playsInline', 'true');
-        video.setAttribute('webkit-playsInline', 'true');
-        video.muted = true;
-        video.play().catch(err => console.warn('Autoplay failed:', err));
-    }
+    // var video = instance.getVideoObject();
+    // if (video) {
+    //     video.setAttribute('playsInline', 'true');
+    //     video.setAttribute('webkit-playsInline', 'true');
+    //     video.muted = true;
+    //     video.play().catch(err => console.warn('Autoplay failed:', err));
+    // }
 });
 
 // document.addEventListener('DOMContentLoaded', function() {

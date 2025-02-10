@@ -9,9 +9,19 @@
     background-size: cover;
     background-position: center;
     color: $dark-theme-clr-text-1;
-    // background-image: url('./img/preview.png');
+    background-image: url('./img/preview.png');
+
+    &__vide {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 0;
+    }
 
     &__title {
+        position: relative;
         font-weight: 700;
         font-size: var(--first-screen-title-font-size, 56px);
         text-align: center;
@@ -22,6 +32,7 @@
     }
 
     &__subtitle {
+        position: relative;
         font-weight: 700;
         font-size: var(--first-screen-subtitle-font-size, 16px);
         line-height: 1.5;

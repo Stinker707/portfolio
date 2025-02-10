@@ -4,7 +4,12 @@ import previewPath from '../img/preview.png';
 document.addEventListener('DOMContentLoaded', function() {
     $('#vide').vide({
         mp4: videoPath,
-        poster: previewPath,
+        poster: previewPath
+    }, {
+        muted: true,
+        autoplay: true,
+        loop: true,
+        playsinline: true
     });
 
     // var video = instance.getVideoObject();
